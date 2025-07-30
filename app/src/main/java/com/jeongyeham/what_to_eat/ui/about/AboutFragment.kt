@@ -18,7 +18,7 @@ class AboutFragment : Fragment() {
     // 点击计数器
     private var clickCount = 0
     // 显示头像需要的点击次数
-    private val REQUIRED_CLICKS = 5
+    private val requiredClicks = 5
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -30,12 +30,12 @@ class AboutFragment : Fragment() {
 
         val textView: TextView = binding.textAbout
         // 只显示作者名字
-        textView.text = "Jeongye Ham"
+        textView.text = getString(R.string.app_author_name)
         
         // 设置点击监听器
         textView.setOnClickListener {
             clickCount++
-            if (clickCount >= REQUIRED_CLICKS) {
+            if (clickCount >= requiredClicks) {
                 showAvatar()
             }
         }
