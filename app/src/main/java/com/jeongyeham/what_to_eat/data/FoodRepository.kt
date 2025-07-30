@@ -1,7 +1,6 @@
 package com.jeongyeham.what_to_eat.data
 
 import com.jeongyeham.what_to_eat.model.Food
-import com.jeongyeham.what_to_eat.data.FoodDao
 
 class FoodRepository(private val foodDao: FoodDao) {
     suspend fun getAllFoods(): List<Food> = foodDao.getAllFoods()
