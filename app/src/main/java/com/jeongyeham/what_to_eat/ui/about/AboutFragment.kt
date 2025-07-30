@@ -4,35 +4,50 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import com.jeongyeham.what_to_eat.R
 import com.jeongyeham.what_to_eat.databinding.FragmentAboutBinding
 
 class AboutFragment : Fragment() {
 
     private var _binding: FragmentAboutBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
+
+    // 点击计数器
+    private var clickCount = 0
+    // 显示头像需要的点击次数
+    private val REQUIRED_CLICKS = 5
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
-        val aboutViewModel =
-            ViewModelProvider(this).get(AboutViewModel::class.java)
-
+    ): View? {
         _binding = FragmentAboutBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
         val textView: TextView = binding.textAbout
-        // 设置作者名字
-        textView.text = "作者：Jeongye Ham\n\n这是一个帮助你决定吃什么的应用程序。"
+        // 只显示作者名字
+        textView.text = "Jeongye Ham"
+        
+        // 设置点击监听器
+        textView.setOnClickListener {
+            clickCount++
+            if (clickCount >= REQUIRED_CLICKS) {
+                showAvatar()
+            }
+        }
 
         return root
+    }
+
+    private fun showAvatar() {
+        val avatarImageView: ImageView = binding.imageAvatar
+        // 显示头像（使用应用图标作为示例）
+        avatarImageView.setImageResource(R.drawable.avatar)
+        avatarImageView.visibility = View.VISIBLE
     }
 
     override fun onDestroyView() {
