@@ -1,6 +1,5 @@
 package com.jeongyeham.what_to_eat.ui.dashboard
 
-import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -36,7 +35,6 @@ class FoodAdapter(
 
     override fun getItemCount(): Int = foods.size
 
-    @SuppressLint("NotifyDataSetChanged")
     fun updateFoods(newFoods: List<Food>) {
         foods = newFoods
         notifyDataSetChanged()
