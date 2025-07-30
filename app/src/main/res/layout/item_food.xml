@@ -11,13 +11,13 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:textSize="18sp"
-        android:text="食物名称" />
+        android:text="@string/dashboard_item_info" />
 
     <Button
         android:id="@+id/button_delete_food"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="删除"
+        android:text="@string/dashboard_item_button"
         android:textColor="@android:color/white"
         android:backgroundTint="@android:color/holo_red_dark" />
 
