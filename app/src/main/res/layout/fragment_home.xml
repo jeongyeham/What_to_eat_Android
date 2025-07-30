@@ -29,7 +29,7 @@
         android:layout_marginEnd="32dp"
         android:background="@android:drawable/edit_text"
         android:gravity="center"
-        android:text="点击下方按钮选择吃什么"
+        android:text="@string/home_button"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -38,14 +38,15 @@
     <!-- 添加选择按钮 -->
     <Button
         android:id="@+id/button_choose"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="196dp"
+        android:layout_height="84dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
-        android:text="今天吃什么？"
+        android:text="@string/home_info"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_result" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
